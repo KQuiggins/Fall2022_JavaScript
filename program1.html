@@ -9,7 +9,18 @@
         function getCost() {
             var cost;
             var quantity;
+            var total;
             const tax = 0.06;
+
+            cost = document.costForm.txtCost.value;
+            quantity = document.costForm.txtQuantity.value;
+
+            total = cost * quantity + tax * (cost * quantity);
+
+            document.costForm.txtTotal.value = total;
+
+
+
 
             
         }
@@ -19,11 +30,11 @@
     <form name="costForm">
         <p><input type="text" name="txtCost">  Enter Item Cost</p>
         
-        <p><input type="text" name="txtCost">  Enter quantity purchased</p>
+        <p><input type="text" name="txtQuantity">  Enter quantity purchased</p>
 
         <p><input onclick="getCost()" type="button" value="Calculate"></p>
 
-        <p><input type="text" name="total" value=""> Total Cost with 6% tax</p>
+        <p><input type="text" name="txtTotal" value=""> Total Cost with 6% tax</p>
 
         
     </form> 
