@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function Person(personName){
+            this.name = personName;
+            this.info = 'This person is called ' + this.name;
+            this.showInfo = function(){
+                alert(this.info);
+            }
+        }
+        var person1 = new Person('Adam');
+        var person2 = new Person('Eve');
+        Person.prototype.sayHello = function() {
+            alert(this.name + " says hello");
+        }
+    </script>
+    <title>Object Oriented Programming</title>
+</head>
+<body>
+    <input type="button" value="Show Info on Adam" onclick="person1.showInfo()" />
+    <input type="button" value="Show Info on Eve" onclick="person2.showInfo()" />
+    <input type="button" value="Say Hello Adam" onclick="person1.sayHello()" />
+    <input type="button" value="Say Hello Eve" onclick="person2.sayHello()" />
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Manipulation</title>
+    <script>
+        function wrangleArray() {
+            var sentence = "JavaScript is a really cool language";
+            var newSentence = "";
+            //Write it out
+            document.getElementById("div1").innerHTML = "<p>" + sentence + "</p>";
+            //Convert to an array
+            var words = sentence.split(" ");
+            // Remove 'really' and 'cool', and add 'powerful' instead
+            var message = words.splice(3,2,"powerful");
+            // use an alert to say what words were removed
+            alert('Removed words: ' + message);
+            // Convert the array to a string, and write it out
+            document.getElementById("div2").innerHTML = "<p>" + words.join(" ") + "</p>";
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <script>wrangleArray();</script>
+</body>
+</html>

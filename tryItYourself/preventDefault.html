@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preventing Default Action</title>
+    <script>
+        window.onload = function() {
+            var Go = document.getElementById('a1');
+            var NoGo = document.getElementById('a2');
+            function permitAccess() {
+                alert('Go right ahead - have fun!');
+            }
+            function refuseAccess(e) {
+                alert('Sorry, but you are not yet authorized to follow this link.');
+                e.preventDefault();
+            }
+            Go.addEventListener('click', permitAccess);
+            NoGo.addEventListener('click', refuseAccess);
+        }
+    </script>
+</head>
+<body>
+    <a href="https://www.google.com" target=_blank id="a1">Go to Google</a><br/>
+    <a href="https://www.google.com" target=_blank id="a2">DO NOT go to Google</a>
+</body>
+</html>
