@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feature Detection</title>
+    <script>
+        window.onload = function () {
+          if(typeof Symbol == 'function') {
+            out = 'Your browser supports Symbols';
+          } else {
+            out = 'Your browser has no Symbol support - upgrade!! (returned ' + typeof Symbol + ')';
+          }
+          document.getElementById('div1').innerHTML = out;
+        }
+      </script>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>
