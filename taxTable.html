@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Table</title>
+    <script>
+        function taxCalc() {
+            var income;
+            var total;
+            income = document.taxForm.txtIncome.value;
+            if ( income >= 0 && income < 27050) {
+                total = income * 0.15;
+            }
+            else if ( income >= 27050 && income < 65550 ) {
+                total = 4057.50 + (.275 * (income - 27050));
+            }
+            else if ( income >= 65550 && income < 136750 ) {
+                total = 14654.00 + (.305 * (income - 65550));
+            }
+            else if ( income >= 136750 && income < 297350) {
+                total = 36361.00 + (.355 * (income - 136750));
+            }
+            else {
+                total = 9334.00 + (.391 * (income - 297350));
+            }
+            total = total.toFixed(2);
+            document.taxForm.txtTotal.value = total;
+
+        }
+    </script>
+</head>
+<body>
+    <h3>Tax Calculator</h3>
+    <form name="taxForm">
+        <p><input type="text" name="txtIncome"> Enter Income</p>
+        <p><input type="button" value="Calculate" onclick="taxCalc()"></p>
+        <p><input type="text" name="txtTotal"> Taxes to be paid</p>
+    </form>
+</body>
+</html>

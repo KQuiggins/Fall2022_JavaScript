@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do-List</title>
+    <script>
+        function countListItems() {
+            var olElement = document.getElementById("toDoList");
+            var count = 0;
+            for (var i=0; i < olElement.childNodes.length; i++) {
+                if(olElement.childNodes[i].nodeType == 1) count++;
+            }
+            alert("The ordered list contains " + count + " items");
+        }
+        window.onload = countListItems;
+    </script>
+</head>
+<body>
+    <h1>Things To Do</h1>
+    <ol id="toDoList">
+        <li>Mow the lawn</li>
+        <li>Clean the windows</li>
+        <li>Answer your email</li>
+    </ol>
+
+    <p id="toDoNotes">Make sure all these are completed by 8pm so you can watch the
+game on TV!</p>
+</body>
+</html>
