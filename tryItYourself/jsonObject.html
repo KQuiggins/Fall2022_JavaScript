@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Objects</title>
+    <script>
+        var booklistObject = {
+            "booklist": [{"title":"Foundation", "author":"Isaac Asimov"},
+            {"title":"Dune", "author":"Frank Herbert"},
+            {"title":"Eon", "author":"Greg Bear"},
+            {"title":"2001 A Space Odyssey", "author":"Arthur C. Clarke"},
+            {"title":"Stranger In A Strange Land", "author":"Robert A. Heinlein"}]
+        }
+
+        // a variable to hold our user message
+        var out = "";
+
+        // get the array
+        var books = booklistObject.booklist;
+
+        //Loop through array, getting the books one by one
+        for(var i=0; i<books.length; i++) {
+            var booknumber = i+1;
+            out += "Book " + booknumber +
+            " is: '" + books[i].title +
+            "' by " + books[i].author +
+            "\n";
+        }
+    </script>
+</head>
+<body onload="alert(out)">
+    
+</body>
+</html>
