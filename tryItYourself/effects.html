@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controlling Effects</title>
+    <style>
+        #div1 {
+            width: 600px;
+            height: 350px;
+            background-color: #6699cc;
+        }
+        #div2 {
+            background-color: #aaaaff;
+            width: 80px;
+            height: 80px;
+            padding: 20px;
+            position: relative;
+            left: 240px;
+            top: 105px;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            document.getElementById("btn1").onclick = function() {
+                document.getElementById("div1").style.background = "radial-gradient(at top left, white, #6699cc)";
+                document.getElementById("div2").style.boxShadow = "10px 10px 10px #808080";
+            }
+            document.getElementById("btn2").onclick = function() {
+                document.getElementById("div1").style.background = "radial-gradient(at top right, white, #6699cc)";
+                document.getElementById("div2").style.boxShadow = "-10px 10px 10px #808080";
+            }
+            document.getElementById("btn3").onclick = function() {
+                document.getElementById("div1").style.background = "radial-gradient(at bottom, white, #6699cc)";
+                document.getElementById("div2").style.boxShadow = "0px -10px 10px #808080";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+            LIGHTS:<br/>
+            <input type="button" id="btn1" value="Top Left"><br/>
+            <input type="button" id="btn2" value="Top Right"><br/>
+            <input type="button" id="btn3" value="Bottom">
+        </div>
+    </div>
+</body>
+</html>

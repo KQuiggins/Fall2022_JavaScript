@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+	<title>Tax Calculator</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+	function getTax() {
+		var cost;
+		var quantity;
+		var total;
+	
+		cost=parseFloat(document.calcForm.Cost.value);
+		quantity=parseFloat(document.calcForm.amount.value);
+		total=cost*quantity;
+		document.calcForm.total.value=total;
+	}
+	</script>
+
+</head>
+<body>
+	<header>
+		<h1>Tax Calculator</h1>
+		
+	</header>
+	<form name="calcForm">
+	<p><input type="text" name="Cost" /> Enter Item Cost</p>
+	<p><input type="text" id="amount" /> Enter Amount Purchased</p>
+	<p><input onclick="getTax()" type="button" value="Calculate"></p>
+	<p><input type="text" name="total" size="20">Total cost with 6% tax</p>
+	</form>
+</body>
