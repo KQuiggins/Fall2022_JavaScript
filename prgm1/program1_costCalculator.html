@@ -1,44 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Program 1</title>
-    <link rel="stylesheet" href="program1.css">
-    <script type="text/javascript">
-        function getCost() {
-            var cost;
-            var quantity;
-            var total;
-            const tax = 0.06;
 
-            cost = document.costForm.txtCost.value;
-            quantity = document.costForm.txtQuantity.value;
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Program 1</title>
+        <link rel="stylesheet" href="program1.css">
+        <script type="text/javascript">
+            function getCost() {
+                var cost;
+                var quantity;
+                var total;
+                const tax = 0.06;
 
-            total = cost * quantity + tax * (cost * quantity);
+                cost = document.costForm.txtCost.value;
+                quantity = document.costForm.txtQuantity.value;
 
-            document.costForm.txtTotal.value = total;
+                total = cost * quantity + tax * (cost * quantity);
+                final_total = "$" + total.toFixed(2);
+
+                document.costForm.txtTotal.value = final_total;
 
 
 
 
-            
-        }
-    </script>
-</head>
-<body>
-    <div class="container">
-        <form name="costForm">
-            <p><input type="text" name="txtCost">  Enter Item Cost</p>
-            
-            <p><input type="text" name="txtQuantity">  Enter quantity purchased</p>
 
-            <p><input onclick="getCost()" type="button" value="Calculate"></p>
+            }
+        </script>
+    </head>
 
-            <p><input type="text" name="txtTotal" value=""> Total Cost with 6% tax</p>
-        </form>
-    </div> 
+    <body>
+        <div class="container">
+            <form name="costForm">
+                <p><input class="input" type="text" name="txtCost"> Enter Item Cost</p>
 
-</body>
+                <p><input class="input" type="text" name="txtQuantity"> Enter quantity purchased</p>
+
+                <p><input id="btn" class="input" onclick="getCost()" type="button"
+                        value="Calculate"></p>
+
+                <p><input class="input" type="text" name="txtTotal" value=""> Total Cost with 6% tax
+                </p>
+            </form>
+        </div>
+
+    </body>
+
 </html>

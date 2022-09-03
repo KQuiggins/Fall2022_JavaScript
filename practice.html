@@ -1,30 +1,27 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Tax Calculator</title>
 	<meta charset="utf-8">
 	<script type="text/javascript">
-	function getTax() {
-		var cost;
-		var quantity;
-		var total;
-	
-		cost=parseFloat(document.calcForm.Cost.value);
-		quantity=parseFloat(document.calcForm.amount.value);
-		total=cost*quantity;
-		document.calcForm.total.value=total;
-	}
+		function Person(name, dob) {
+			this.name = name;
+			this.birthday = new Date(dob);
+			this.calculateAge = function() {
+				const diff = Date.now() - this.birthday.getTime();
+				console.log(diff);
+				const ageDate = new Date(diff);
+				console.log(ageDate);
+				return Math.abs(ageDate.getUTCFullYear() - 1970);
+			}
+		}
+
+		const ken = new Person('Ken', '9-10-1981');
+		console.log(ken.calculateAge());
 	</script>
 
 </head>
 <body>
-	<header>
-		<h1>Tax Calculator</h1>
-		
-	</header>
-	<form name="calcForm">
-	<p><input type="text" name="Cost" /> Enter Item Cost</p>
-	<p><input type="text" id="amount" /> Enter Amount Purchased</p>
-	<p><input onclick="getTax()" type="button" value="Calculate"></p>
-	<p><input type="text" name="total" size="20">Total cost with 6% tax</p>
-	</form>
+	
+	
 </body>
