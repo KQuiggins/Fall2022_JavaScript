@@ -4,6 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- CSS -->
+<style>
+body{
+    color: red;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgb(181, 198, 234);
+    
+}
+h3{
+    color: red;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    margin-top: 20px;
+    
+    margin-bottom: 20px;
+}
+
+.container{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    height: 300px;
+    margin-top: 50px;
+    border: 1px solid black;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+
+.input{
+    
+    margin-left: 105px;
+   
+
+}
+
+#btn{
+    padding: 5px;
+    color: rgb(107, 61, 61);
+}
+/* JavaScript */
+</style>
     <title>Tax Table</title>
     <script>
         function taxCalc() {
@@ -25,18 +71,21 @@
             else {
                 total = 9334.00 + (.391 * (income - 297350));
             }
-            total = total.toFixed(2);
+            total = "$" + total.toFixed(2);
             document.taxForm.txtTotal.value = total;
 
         }
     </script>
 </head>
+
 <body>
-    <h3>Tax Calculator</h3>
-    <form name="taxForm">
-        <p><input type="text" name="txtIncome"> Enter Income</p>
-        <p><input type="button" value="Calculate" onclick="taxCalc()"></p>
-        <p><input type="text" name="txtTotal"> Taxes to be paid</p>
-    </form>
+    <div class="container">
+        <h3>Tax Calculator</h3>
+        <form name="taxForm">
+            <p><input class="input" type="text" name="txtIncome"> Enter Income</p>
+            <p><input class="input" id="btn" type="button" value="Calculate" onclick="taxCalc()"></p>
+            <p><input class="input" type="text" name="txtTotal"> Taxes to be paid</p>
+        </form>
+    </div>
 </body>
 </html>
