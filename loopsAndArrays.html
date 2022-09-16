@@ -5,6 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loops and Arrays</title>
+    <style>
+        tr,td,th{
+            border:1px solid black;
+            padding:5px;
+            
+            
+        }
+
+        #btn{
+            margin-bottom: 20px;
+        }
+
+        #container{
+            display:block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 200px;
+        }
+
+        #displayTable{
+            display:block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+    </style>
     <script>
         var mph = [20, 35, 45, 55, 65, 70, 75, 80, 90]
         function generateTable() {
@@ -24,9 +50,12 @@
     </script>
 </head>
 <body style="text-align:center;background-color: aliceblue;">
-    <h1 style="text-align:center; color:blue">MPH to KPH</h1>
-    <input type="button" value="click me" onclick="generateTable()" style="padding:5px; text-align:center;color:blueviolet">
+    <div id="container">
+        <h1 style="text-align:center; color:blue">MPH to KPH</h1>
+        
+        <input id="btn" type="button" value="click me" onclick="generateTable()" style="padding:5px; text-align:center;color:blueviolet">
 
-    <div id="displayTable"></div>
+        <div id="displayTable"></div>
+    </div>
 </body>
 </html>
