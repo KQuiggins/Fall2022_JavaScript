@@ -20,6 +20,7 @@ window.onload = function() {
 
         for(i=0; i < items.length; i++){
             total = (items[i].cost * items[i].quantity).toFixed(2);
+            row = tbl.insertRow(-1)
             row.insertCell().innerHTML = items[i].item;
             row.insertCell().innerHTML = items[i].cost;
             row.insertCell().innerHTML = items[i].quantity;
