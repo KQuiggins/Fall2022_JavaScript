@@ -8,5 +8,27 @@ window.onload = function() {
         {item: 'goggles', cost: 8.99, quantity: 2}   	
      ];
 
-     
+
+     document.getElementById('showData').onclick = function(){
+        var tbl = document.createElement('table')
+        tbl.setAttribute('class', 'table');
+        var row = tbl.insertRow(-1)
+        row.insertCell().innerHTML = "Item"
+        row.insertCell().innerHTML = "Cost"
+        row.insertCell().innerHTML = "Quantity"
+        row.insertCell().innerHTML = "Subtotal"
+
+        for(i=0; i < items.length; i++){
+            total = (items[i].cost * items[i].quantity).toFixed(2);
+            row.insertCell().innerHTML = items[i].item;
+            row.insertCell().innerHTML = items[i].cost;
+            row.insertCell().innerHTML = items[i].quantity;
+            row.insertCell().innerHTML = total;
+        }
+
+        var display = document.getElementById('tableData');
+        display.appendChild(tbl);
+     };
+
+
 }
