@@ -5,26 +5,28 @@
 //    $136,750 	       $297,350    /$36,361.00 + (35.5% of the amount over $136,750)
 //    $297,350 and up 	  	      / $93,374.00 + (39.1% of the amount over $297,350)
 
-function getTax() {
+document.getElementById('btn').addEventListener('click', function(e) {
+  e.preventDefault();
+  var income;
+  var total;
+  income = document.taxForm.taxIncome.value;
+  if ( income >= 0 && income < 27050) {
+      total = income * 0.15;
+  }
+  else if ( income >= 27050 && income < 65550 ) {
+      total = 4057.50 + (.275 * (income - 27050));
+  }
+  else if ( income >= 65550 && income < 136750 ) {
+      total = 14654.00 + (.305 * (income - 65550));
+  }
+  else if ( income >= 136750 && income < 297350) {
+      total = 36361.00 + (.355 * (income - 136750));
+  }
+  else {
+      total = 9374.00 + (.391 * (income - 297350));
+  }
+  total = "$" + total.toFixed(2);
+  document.taxForm.taxTotal.value = total;
+  
 
-    let total;
-    let income = document.getElementById("income").value;
-    console.log(income);
-
-    if (income <= 27050) {
-        total = income * 0.15;
-      } else if (income <= 65550) {
-        total = 4057.5 + (income - 27050) * 0.275;
-      } else if (income <= 136750) {
-        total = 14654 + (income - 65550) * 0.305;
-      } else if (income <= 297350) {
-        total = 36361 + (income - 136750) * 0.355;
-      } else {
-        total = 93374 + (income - 297350) * 0.391;
-      }
-
-    
-    document.getElementById("tax-output").innerHTML = total;
-
-
-}
+});
