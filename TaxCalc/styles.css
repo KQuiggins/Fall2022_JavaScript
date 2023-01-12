@@ -1,0 +1,55 @@
+body{
+    box-sizing: border-box;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgb(87, 83, 173) 0%, rgba(132,132,203,1) 35%, rgba(0,212,255,1) 100%);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    color: #333;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    padding: 20px;
+    height: 300px;
+}
+
+h1{
+    color: rgb(216, 192, 192);
+    text-align: center;
+}
+
+button{
+    margin: 10px;
+    margin-right: 180px;
+    padding: 5px;
+    color: rgb(92, 79, 79);
+    background-color: rgb(216, 192, 192);
+    border: none;
+    border-radius: 5px;
+}
+
+#taxIncome{
+    margin-left: 48px;
+}
+
+input{
+    margin: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+label{
+    margin: 10px;
+    padding: 5px;
+    color: white;
+}
+
